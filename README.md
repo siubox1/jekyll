@@ -1,12 +1,12 @@
 # Serverdirect Style Guide
 
-Based on Jekyll.
+Based on `Jekyll/liquid`.
 
 ## Production link
 
 [Link](https://serverdirect.nl/jekyllstyleguide).
 
-## How it works
+## Documentation
 
 Define components in the `_components` folder. Each component is output twice (code and preview) using a single include file `_includes/component.html`.
 
