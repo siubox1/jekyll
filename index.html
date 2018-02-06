@@ -2,43 +2,65 @@
 layout: default
 ---
 
-<h1 class="sg-h1">Styleguide Template</h1>
+<div class="main-wrapper">
+	<div class="menu">
+		<h1 class="sg-h1 main-title">{{ site.title }}</h1>
+		<p style="padding: 0 1em; font-size: 11px; color: #efefef;">Last updated on <br>{{ site.time | date_to_rfc822 }}</p>
 
-<p>Boilerplate for creating components based style guides using <a href="http://jekyllrb.com">Jekyll</a>. Here is the <a href="https://github.com/jeromecoupe/jekyllstyleguide">Github repository</a> for it, should you want to have a peek at the code, fork it or report an issue.</p>
+		<ul>
+			{% assign entries = site.components %}
+			{% for entry in entries %}
+		  	<li>
+				<a href="#{{ entry.title | slugify }}"><p>{{ entry.title }}</p></a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
 
-{% assign entries = site.components %}
-{% for entry in entries %}
-  {% include component.html %}
-{% endfor %}
+	<div class="content">
+	
+		<h1 class="sg-h1 main-title mobile">{{ site.title }}</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida massa et tortor semper condimentum. Vestibulum sed elementum dolor.</p>
 
-{% comment %}
-
-If you want to make sure your types are grouped (file names are not enough), you could use this group_by loop instead
-
-{% assign componentsByType = site.components | group_by:"type" %}
-{% for type in componentsByType %}
-  <h3 class="sg-h2">{{ type.name | capitalize }}</h3>
-  {% for entry in type.items %}
-    {% include component.html %}
-  {% endfor %}
-{% endfor %}
-
-{% endcomment %}
-
+		{% assign entries = site.components %}
+		{% for entry in entries %}
+		  {% include component.html %}
+		{% endfor %}
 
 
-{% comment %}
 
-If you want to use pages and/or posts to create a more comple styleguide with pages / intros for every type of components, you can use these where loops on those pages / posts instead
 
-{% assign entries = site.components | where:"type","buttons" %}
-{% for entry in entries %}
-  {% include component.html %}
-{% endfor %}
+		{% comment %}
 
-{% assign entries = site.components | where:"type","typography" %}
-{% for entry in entries %}
-  {% include component.html %}
-{% endfor %}
+		If you want to make sure your types are grouped (file names are not enough), you could use this group_by loop instead
 
-{% endcomment %}
+		{% assign componentsByType = site.components | group_by:"type" %}
+		{% for type in componentsByType %}
+		  <h3 class="sg-h2">{{ type.name | capitalize }}</h3>
+		  {% for entry in type.items %}
+		    {% include component.html %}
+		  {% endfor %}
+		{% endfor %}
+
+		{% endcomment %}
+
+
+
+		{% comment %}
+
+		If you want to use pages and/or posts to create a more comple styleguide with pages / intros for every type of components, you can use these where loops on those pages / posts instead
+
+		{% assign entries = site.components | where:"type","buttons" %}
+		{% for entry in entries %}
+		  {% include component.html %}
+		{% endfor %}
+
+		{% assign entries = site.components | where:"type","typography" %}
+		{% for entry in entries %}
+		  {% include component.html %}
+		{% endfor %}
+
+		{% endcomment %}
+	</div>
+</div>
+	

@@ -1,0 +1,25 @@
+img {
+    display: block;
+    height: auto;
+    margin: 0 0 10px 0;
+}
+
+.small {
+    width: 100%;
+    max-width: 405px;
+}
+
+.medium {
+    width: 100%;
+    max-width: 720px;
+}
+
+.large {
+    width: 100%;
+    max-width: 1280px;
+}
+
+.full {
+    width: 100%;
+    max-width: none;
+}
