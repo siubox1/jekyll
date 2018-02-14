@@ -4,8 +4,8 @@ layout: default
 
 <div class="main-wrapper">
 	<div class="menu">
-		<h1 class="sg-h1 main-title">{{ site.title }}</h1>
-		<p style="padding: 0 1em; font-size: 11px; color: #efefef;">Last updated on <br>{{ site.time | date_to_rfc822 }}</p>
+		<h1 class="sg-h1 main-title"><a href="{{ page.url }}#top">{{ site.title }}</a></h1>
+		<p style="padding: 0 1em; font-size: 11px; color: #efefef;">Style Guide was last updated at <br>{{ site.time | date: "%a, %b %d, %Y, %H:%M:%S" }}</p>
 
 		<ul>
 			{% assign entries = site.components %}
@@ -17,7 +17,7 @@ layout: default
 		</ul>
 	</div>
 
-	<div class="content">
+	<div class="content" id="top">
 	
 		<h1 class="sg-h1 main-title mobile">{{ site.title }}</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida massa et tortor semper condimentum. Vestibulum sed elementum dolor.</p>

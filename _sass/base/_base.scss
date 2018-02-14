@@ -1,3 +1,5 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');*/
+
 body {
     margin: 0;
     padding: 0;
@@ -6,10 +8,14 @@ body {
 }
 
 h1.main-title {
+	padding: 0 .333333em;
+	margin-bottom: 1em;
+}
+
+h1.main-title a {
 	color: #efefef;
 	font-size: 1.4rem;
-	padding: 0 .5em;
-	margin-bottom: 1em;
+	text-decoration: none;
 }
 
 div.main-wrapper {
@@ -17,6 +23,8 @@ div.main-wrapper {
 	height: 100%;
 	position: absolute;
 	overflow-x: hidden;
+	left: 0;
+	top: 0;
 }
 
 div.menu {
@@ -42,6 +50,8 @@ div.menu ul li p {
 div.menu ul li a {
 	text-decoration: none;
 	color: #efefef;
+	font-size: 14px;
+	font-weight: 300;
 }
 
 div.menu ul li {
@@ -77,8 +87,9 @@ div.content {
 	}
 	div.content {
 		float: none !important;
+		left: 0 !important;
 		width: calc(100% - 2em) !important;
-		padding: 1em 0 !important;
+		padding: 1em !important;
 	}
 	body {
 		padding: 0 1em !important;
